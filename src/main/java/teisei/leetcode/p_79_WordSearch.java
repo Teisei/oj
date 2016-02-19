@@ -1,4 +1,4 @@
-package leetcode;
+package teisei.leetcode;
 
 /**
  * Created by Teisei on 2016/2/15.

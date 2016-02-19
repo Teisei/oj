@@ -1,4 +1,4 @@
-package leetcode;
+package teisei.leetcode;
 
 import java.util.HashSet;
 
