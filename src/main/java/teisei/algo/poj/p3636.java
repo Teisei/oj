@@ -31,7 +31,7 @@ class Doll implements Comparable<Doll> {
 }
 
 /**
- * 相同的方法，C++过了。
+ * 相同的方法，C1++过了。
  */
 public class p3636 {
 

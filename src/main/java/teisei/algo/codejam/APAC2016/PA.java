@@ -1,4 +1,4 @@
-package teisei.algo.codejam.APAC2016;
+package teisei.algo.codejam.apac2016;
 
 import java.util.HashMap;
 import java.util.Map;

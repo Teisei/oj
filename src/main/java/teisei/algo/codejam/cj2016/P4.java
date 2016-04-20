@@ -1,66 +1,63 @@
 package teisei.algo.codejam.cj2016;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-import java.util.Scanner;
+import teisei.algo.codejam.CodeJamTemplate;
 
 /**
  * Created by Teisei on 2016/4/9.
  */
-public class P4 {
-    static boolean LOCAL = System.getSecurityManager() == null;
-    static Scanner sc = new Scanner(System.in);
+public class P4 extends CodeJamTemplate {
+
+    @Override
+    public void init() {
+        setDIR("./data/cj2015");
+        setNAME("B");
+        setTYPE("test");
+        setLOCAL(System.getSecurityManager() == null);
+    }
+
 
 
     public static void main(String[] args) {
         new P4().run0();
-    }
 
-    public void run0() {
-
-        if (LOCAL) {
-            try {
-                String inputPath = "D:\\Download\\D-small-attempt0.in";
-                inputPath = "D:\\Download\\D-large.in";
-//                inputPath = "./data/in2.txt";
-                System.setIn(new FileInputStream(inputPath));
-                sc = new Scanner(System.in);
-
-                String outputPath = "D:\\IntelliJ_Projects\\oj\\src\\main\\java\\teisei\\algo\\codejam\\cj2016\\D-large.out";
-                System.setOut(new PrintStream(new FileOutputStream(outputPath)));
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                LOCAL = false;
-            }
-        }
-        new P4().run();
     }
 
     public void run() {
         int test = sc.nextInt();
-        for (int i = 1; i <= test; i++) {
+        for (int t = 1; t <= test; t++) {
             int K, S, C;
             K = sc.nextInt();
             C = sc.nextInt();
             S = sc.nextInt();
-            int s = C == 1 || K == 1 ? K : K - 1;
+
+            int s = (int) Math.ceil((double) K / (double) C);
             if (S < s) {
-                System.out.println("Case #" + i + ": IMPOSSIBLE");
+                System.out.println("Case #" + t + ": IMPOSSIBLE");
             } else {
-                int start = (C == 1 || K == 1) ? 1 : 2;
-                int end = K;
-                //k row , k+1
-                //qiantao le C ceng
                 String tmp = "";
-                for (int j = start; j <= end; j++) {
-                    tmp += j + " ";
+                for (int i = 1; i <= K; ) {
+                    int start = i, end = Math.min(K, i + C - 1);
+                    tmp += " " + coverFromS2T(K, start, end);
+                    i += C;
                 }
-                tmp = tmp.substring(0, tmp.length() - 1);
-                System.out.println("Case #" + i + ": " + tmp);
+                System.out.println("Case #" + t + ":" + tmp);
             }
         }
+    }
+
+    public long coverFromS2T(long K, long s, long t) {
+        return getRank(K, s, t - s + 1);
+    }
+
+    public long getRank(long K, long start, long level) {
+        //start from level 1
+        long block = 1, rank = start;
+        int lv = 1;
+        while (lv++ < level) {
+            block = (block - 1) * K + rank;
+            rank += 1;
+        }
+        return (block - 1) * K + rank;
     }
 
 }

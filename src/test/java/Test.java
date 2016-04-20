@@ -3,11 +3,29 @@
 // (powered by Fernflower decompiler)
 //
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
+
+class C1 implements Comparable<C1> {
+
+    @Override
+    public int compareTo(C1 o) {
+        return 0;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+}
+
+class C2 implements Comparator<C2> {
+
+    @Override
+    public int compare(C2 o1, C2 o2) {
+        return 0;
+    }
+}
 
 class IntTriple {
     int k;

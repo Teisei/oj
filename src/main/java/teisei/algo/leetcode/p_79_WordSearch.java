@@ -29,9 +29,9 @@ public class p_79_WordSearch {
         };
         word = "SEE";
 //        board = new char[][]{
-//                {'C','A','A'},
+//                {'C1','A','A'},
 //                {'A','A','A'},
-//                {'B','C','D'},
+//                {'B','C1','D'},
 //        };
 //        word = "AAB";
     }

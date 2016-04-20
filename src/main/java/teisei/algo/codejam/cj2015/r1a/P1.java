@@ -1,43 +1,22 @@
-package teisei.algo.codejam.cj2015;
+package teisei.algo.codejam.cj2015.r1a;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-import java.util.Scanner;
+import teisei.algo.codejam.CodeJamTemplate;
 
 /**
  * Created by Teisei on 2016/4/9.
  */
-public class P1 {
+public class P1 extends CodeJamTemplate {
 
-    static boolean LOCAL = System.getSecurityManager() == null;
-    static Scanner sc = new Scanner(System.in);
-
+    @Override
+    public void init() {
+        setDIR("./data/cj2015/r1a");
+        setNAME("A");
+        setTYPE("large");
+        setLOCAL(System.getSecurityManager() == null);
+    }
 
     public static void main(String[] args) {
         new P1().run0();
-    }
-
-    public void run0() {
-
-        if (LOCAL) {
-            try {
-                String inputPath = "D:\\Download\\D-small-attempt0.in";
-                inputPath = "./data/cj2015/p1.in";
-                inputPath = "D:\\Download\\A-small-practice.in";
-                inputPath = "D:\\Download\\A-large-practice.in";
-                System.setIn(new FileInputStream(inputPath));
-                sc = new Scanner(System.in);
-
-                String outputPath = "./data/cj2015/A-large.out";
-                System.setOut(new PrintStream(new FileOutputStream(outputPath)));
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                LOCAL = false;
-            }
-        }
-        new P1().run();
     }
 
     public void run() {

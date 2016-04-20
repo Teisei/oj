@@ -1,32 +1,25 @@
 package teisei.algo.codejam.cj2016;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+import teisei.algo.codejam.CodeJamTemplate;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 /**
  * Created by Teisei on 2016/4/9.
  */
-public class P1 {
-    static boolean LOCAL = System.getSecurityManager() == null;
-    Scanner sc = new Scanner(System.in);
+public class P1 extends CodeJamTemplate{
+
+    @Override
+    public void init() {
+        setDIR("./data/cj2016");
+        setNAME("A");
+        setTYPE("test");
+        setLOCAL(System.getSecurityManager() == null);
+    }
 
     public static void main(String[] args) {
-        if (LOCAL) {
-            try {
-                System.setIn(new FileInputStream("./data/in1.txt"));
-                System.setOut(new PrintStream(new FileOutputStream("D:\\IntelliJ_Projects\\oj\\src\\main\\java\\teisei\\algo\\codejam\\cj2016\\out.txt")));
-
-            } catch (Throwable throwable) {
-                LOCAL = false;
-            }
-
-        }
-        new P1().run();
-
+        new P1().run0();
     }
 
     public void run() {
