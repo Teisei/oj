@@ -13,7 +13,7 @@ public class p_22_GenerateParentheses {
     }
 
     public void run() {
-        int n = 1;
+        int n = 4;
         List<String> resList = generateParenthesis(n);
         for (String e : resList) {
             System.out.println(e);
