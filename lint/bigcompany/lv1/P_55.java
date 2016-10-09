@@ -3,7 +3,7 @@ package teisei.algo.lint.bigcompany.lv1;
 /**
  * Created by Teisei on 2016/4/21.
  */
-public class P2 {
+public class P_55 {
     public static void main(String[] args) {
         new P2().run();
 

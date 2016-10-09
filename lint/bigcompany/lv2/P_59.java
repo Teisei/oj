@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by Teisei on 2016/4/24.
  */
-public class P7 {
+public class P_59 {
     public static void main(String[] args) {
         new P7().run();
 

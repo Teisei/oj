@@ -3,7 +3,7 @@ package teisei.algo.lint.bigcompany.lv1;
 /**
  * Created by Teisei on 2016/4/21.
  */
-public class P3 {
+public class P_13 {
     public static void main(String[] args) {
         new P3().run();
 
@@ -28,7 +28,7 @@ public class P3 {
         int n = source.length(), m = target.length();
         if (n == m && n == 0) return 0;
         for (int s = 0; s < n - m + 1; s++) {
-            
+
             if (strStr(source, s, target)) return s;
         }
         return -1;

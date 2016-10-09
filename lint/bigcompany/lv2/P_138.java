@@ -6,7 +6,7 @@ import java.util.HashMap;
 /**
  * Created by Teisei on 2016/4/24.
  */
-public class P2 {
+public class P_138 {
     public static void main(String[] args) {
         new P2().run();
     }
